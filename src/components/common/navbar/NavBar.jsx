@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 const navItems = [
   { id: 1, name: "Home", url: "introduction" },
   { id: 2, name: "About", url: "profile" },
-  // { id: 3, name: "Process", url: "work-process" },
+  { id: 3, name: "Process", url: "work-process" },
   // { id: 4, name: "Portfolio", url: "portfolio" },
   // { id: 5, name: "Blog", url: "blog" },
   // { id: 6, name: "Services", url: "services" },
@@ -27,7 +27,7 @@ const menu = navItems.map((item) => (
       spy={true}
       offset={-140}
       activeStyle={{
-        backgroundColor: "#9929fb",
+        backgroundColor: "#ED1B2E",
         color: "white",
       }}
       className={`hover:text-picto-primary px-5 py-3 mx-1`}

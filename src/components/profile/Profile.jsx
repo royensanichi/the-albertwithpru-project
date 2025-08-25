@@ -1,4 +1,4 @@
-import person from "../../assets/images/person2.png";
+import person from "../../assets/images/albert.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import SocialMedia from "../common/socialMedia/SocialMedia";
@@ -33,22 +33,26 @@ const Profile = () => {
           <h2
             className={`text-2xl xxs:text-3xl sm:text-4xl lg:text-[38px] text-[min(24px,38px)] max-md:text-center font-semibold mb-8`}
           >
-            I am Professional User Experience Designer
+            Tentang Albert
           </h2>
           <div
             className={`text-xs xs:text-[16px] lg:text-lg font-normal max-md:text-center text-gray-600`}
           >
+            <p className="mb-3">
+              Pernah menjadi korban iming-iming agen asuransi biru(teman baik), bahkan sampai ditinggal saat polis masih aktif. 
+            </p>
             <p className={``}>
-              I design and develop services for customers specializing creating
-              stylish, modern websites, web services and online stores. My
-              passion is to design digital user experiences.
+              Menjadi saksi hidup saat alm. kakak saya dari kondisi sakit sampai berpulang, 
+              Prudential membantu meringankan beban keluarga kami dan menepati janji kontrak yang dibuat diantara kakak dan Prudential.
             </p>
             <p className="mt-3">
-              I design and develop services for customers specializing creating
-              stylish, modern websites, web services.
+              Dari saat itulah Saya ingin bisa membantu orang-orang merencanakan keuangan dan melindungi masa depan keluarga seperti yang dilakukan oleh agen kakakku.
             </p>
+            <b className="mt-3 block">
+            "Selalu Berikan Yang Terbaik untuk Keluarga Mu."  
+            </b>
           </div>
-          <div className="mt-8 flex max-md:justify-center">
+          {/* <div className="mt-8 flex max-md:justify-center">
             <a
               className="btn xxs:btn-lg px-6 max-xs:px-2 xxs:py-3 btn-primary text-xs xxs:text-[14px] sm:text-[16px]"
               href="#!"
@@ -61,7 +65,7 @@ const Profile = () => {
             >
               <FontAwesomeIcon icon={faDownload} /> Download CV
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
