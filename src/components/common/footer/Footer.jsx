@@ -3,18 +3,18 @@ import logo from "../../../assets/logo.png";
 /* Footer nabLinks */
 const navItems = [
   { id: 1, name: "Home", url: "/" },
-  { id: 2, name: "About", url: "About" },
-  // { id: 3, name: "Process", url: "Process" },
+  { id: 2, name: "Tentang Saya", url: "/" },
+  { id: 3, name: "Cara Saya Bekerja", url: "/" },
   // { id: 4, name: "Portfolio", url: "Portfolio" },
   // { id: 5, name: "Blog", url: "Blog" },
   // { id: 6, name: "Services", url: "Services" },
   // { id: 7, name: "Contact", url: "Contact" },
 ];
-const copyrightYear = new Date().getFullYear();
+const copyrightYear = 2025;
 
 const Footer = () => {
   return (
-    <div className="pt-25 md:pt-40 content max-2xl:px-3">
+    <div className=" md:pt-40 content max-2xl:px-3">
       <div className="flex max-md:flex-col justify-between mx-0 items-center h-full w-full text-neutral-200">
         <a href="#" className="flex items-center border-0">
           {/* <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" />
@@ -34,9 +34,9 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        {/* <p className="text-[12px] sm:text-[16px]">
-          Copyright &copy; {copyrightYear} Picto.
-        </p> */}
+        <p className="text-[12px] sm:text-[16px]">
+          @albertwithpru  -  {copyrightYear}
+        </p>
       </div>
       <p className="text-white text-center max-xs:text-[12px] max-md:text-[14px] w-full py-10">
         Developed with ❤️ by{" "}

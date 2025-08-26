@@ -4,8 +4,8 @@ import { Link } from "react-scroll";
 
 const navItems = [
   { id: 1, name: "Home", url: "introduction" },
-  { id: 2, name: "About", url: "profile" },
-  { id: 3, name: "Process", url: "work-process" },
+  { id: 2, name: "Tentang Saya", url: "profile" },
+  { id: 3, name: "Cara Kerja", url: "work-process" },
   // { id: 4, name: "Portfolio", url: "portfolio" },
   // { id: 5, name: "Blog", url: "blog" },
   // { id: 6, name: "Services", url: "services" },
@@ -103,7 +103,7 @@ const NavBar = () => {
           <ul className="hidden lg:flex menu menu-horizontal text-[16px] font-medium md:shrink-0">
             {menu}
           </ul>
-          <p className="">
+          {/* <p className="">
             <Link
               className="btn btn-sm xs:btn-md sm:btn-lg btn-primary"
               href="#contact"
@@ -113,7 +113,7 @@ const NavBar = () => {
             >
               Contact
             </Link>
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

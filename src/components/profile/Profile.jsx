@@ -33,16 +33,17 @@ const Profile = () => {
           <h2
             className={`text-2xl xxs:text-3xl sm:text-4xl lg:text-[38px] text-[min(24px,38px)] max-md:text-center font-semibold mb-8`}
           >
-            Tentang Albert
+            Tentang Albert 
+            <p className="text-sm">@albertwithpru</p>
           </h2>
           <div
             className={`text-xs xs:text-[16px] lg:text-lg font-normal max-md:text-center text-gray-600`}
           >
             <p className="mb-3">
-              Pernah menjadi korban iming-iming agen asuransi biru(teman baik), bahkan sampai ditinggal saat polis masih aktif. 
+              <b>Jadi nasabah asuransi selama 2 tahun </b> dan jadi <b>korban iming-iming agen</b> & <b className={"text-xl"}>ditinggal agen</b> asuransi biru(teman baik). 
             </p>
             <p className={``}>
-              Menjadi saksi hidup saat alm. kakak saya dari kondisi sakit sampai berpulang, 
+              Saya menjadi saksi hidup saat alm. kakak sakit sampai berpulang, 
               Prudential membantu meringankan beban keluarga kami dan menepati janji kontrak yang dibuat diantara kakak dan Prudential.
             </p>
             <p className="mt-3">
