@@ -93,8 +93,10 @@ const NavBar = () => {
             className="flex items-center border-0 lg:max-xxl:ps-5"
           >
             <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" /> 
-            <p className="text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
-              #<span style={{color:"#13c4b5f6"}}>Albert</span><span className="text-lg">With</span><span style={{color:"#ED1B2E"}}>Prudential</span>
+            <p className="max-w-screen text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
+              #<span style={{color:"#13c4b5f6"}}>Albert</span>
+              <span className={window.innerWidth < 500 ? "text-sm" : "text-lg"}>With</span>
+              <span style={{color:"#ED1B2E"}}>Prudential</span>
             </p>
           </Link>
         </div>

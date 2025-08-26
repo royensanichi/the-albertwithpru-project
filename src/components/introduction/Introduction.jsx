@@ -28,12 +28,15 @@ const Introduction = () => {
       className="flex max-lg:flex-col-reverse sm:justify-between pt-10 lg:pt-31.5 lg:mb-27.5 max-xl:gap-2 p-2 max-xxl:px-4"
       id="introduction"
     >
+     
       <img  src={group}
           alt="group" 
              className="absolute inset-0 w-full max-h-350 object-cover opacity-60 -z-0"
       />
+      
+      
       <div className="w-full flex flex-col justify-between max-lg:text-center z-10 ">
-        <div className="pt-13 me-31.5 w-full lg:w-auto transition-all duration-500 text-white drop-shadow-[0_0_8px_black]">
+        <div className="pt-13 me-31.5 w-full xl:w-auto transition-all duration-500 text-white drop-shadow-[0_0_8px_black]">
           <p className="text-sm sm:text-base w-full
           lg:w-auto text-center lg:text-start mb-3">
             <span className="font-semibold text-3xl xxs:text-4xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">
@@ -63,15 +66,17 @@ const Introduction = () => {
           </div>
         </div> */}
       </div>
+       {window.innerWidth > 1024 && 
       <div
         className={`max-w-128 w-full h-full max-lg:mx-auto aspect-[536/636] relative`}
       >
         <img
-          className={`shadow-2xl shadow-gray-200 w-full h-full absolute bottom-0 object-contain bg-white rounded-3xl`}
+          className={`shadow-2xl shadow-gray-200 w-full h-auto absolute bottom-50 object-contain bg-white rounded-3xl`}
           src={group}
           alt="group"
         />
       </div>
+}
     </div>
   );
 };
