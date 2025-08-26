@@ -12,15 +12,10 @@ export const router = createBrowserRouter(
       path: `/`,
       element: (
         <Suspense fallback={<Loading />}>
-          <Main />
+          <Home />
         </Suspense>
       ),
-      children: [
-        {
-          path: "/undefined",
-          element: <Home />,
-        },
-      ],
+      
     },
   ]
 );
