@@ -1,4 +1,4 @@
-import person from "../../assets/images/albert.jpg";
+import siloam from "../../assets/images/prusiloam.jpg";
 import group from "../../assets/images/group_photo.jpg";
 import "./introduction.css";
 import InformationSummary from "./InformationSummary";
@@ -29,18 +29,18 @@ const Introduction = () => {
       id="introduction"
     >
      
-      <img  src={group}
+      <img  src={ window.innerWidth > 1024 ? group : siloam}
           alt="group" 
-             className="absolute inset-0 w-full max-h-350 object-cover opacity-60 -z-0"
+             className="absolute inset-0 w-full max-h-350 object-cover opacity-60 -z-0 blur-xs"
       />
       
       
       <div className="w-full flex flex-col justify-between max-lg:text-center z-10 ">
-        <div className="pt-13 me-31.5 w-full xl:w-auto transition-all duration-500 text-white drop-shadow-[0_0_8px_black]">
+        <div className="pt-13 me-31.5 w-full xl:w-auto transition-all duration-500 text-white drop-shadow-[0_0_4px_black]">
           <p className="text-sm sm:text-base w-full
           lg:w-auto text-center lg:text-start mb-3">
-            <span className="font-semibold text-3xl xxs:text-4xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">
-              Albert Sany
+            <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">
+              <span style={{color:"#13c4b5f6"}}>#Albert</span> with <span style={{color:"#ED1B2E"}}>Prudential</span>
             </span>
              @albertwithpru | Servicing Agent Prudential
           </p>
@@ -66,17 +66,17 @@ const Introduction = () => {
           </div>
         </div> */}
       </div>
-       {window.innerWidth > 1024 && 
+      
       <div
-        className={`max-w-128 w-full h-full max-lg:mx-auto aspect-[536/636] relative`}
+        className={`max-w-128 w-full h-auto max-lg:mx-auto aspect-[536/636] relative`}
       >
+        
         <img
-          className={`shadow-2xl shadow-gray-200 w-full h-auto absolute bottom-50 object-contain bg-white rounded-3xl`}
-          src={group}
+          className={`shadow-2xl shadow-gray-200 w-full h-auto absolute bottom-auto object-contain bg-white rounded-3xl`}
+          src={ window.innerWidth > 1024 ? group : siloam}
           alt="group"
         />
       </div>
-}
     </div>
   );
 };

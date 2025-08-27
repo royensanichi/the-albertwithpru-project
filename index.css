@@ -24,6 +24,12 @@
   --color-soft-white: #f0f1f3;
   --color-soft-dark: #87909d;
 }
+/* 
+.text-stripes-prudential{
+  background: linear-gradient(to bottom, #ED1B2E 30%, white  50%, #13c4b5f6 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
 
 .btn-primary {
   @apply bg-picto-primary border-0 text-white hover:scale-[102%] hover:bg-picto-primary-dark transition-all duration-500;

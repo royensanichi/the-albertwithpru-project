@@ -10,24 +10,31 @@ import "./testimonial.css";
 const testimonialData = [
   {
     message:
-      "Working with this team was a fantastic experience. Their attention to detail and commitment to quality exceeded our expectations.",
-    quote: `From the initial consultation to the final delivery, every step was handled professionally. The end result was a product that not only met our needs but also impressed our stakeholders. Highly recommended!`,
-    name: "Esther Howard",
-    designation: "Managing Director, ABC Company",
+      "2021 - 2023 : Masa-masa Covid",
+    quote: `Sadar Pentingnya Asuransi saat pandemi, masuk dengan agen asuransi sekaligus teman baik, 3 bulan polis terbit terkena COVID, berobat sampai sembuh dan di re-imburse, sayangnya 2 tahun kemudian saya ditinggal agen. Polis Lapsed.`,
+    // name: "Esther Howard",
+    // designation: "Managing Director, ABC Company",
   },
   {
     message:
-      "Their expertise in UI/UX design helped us transform our digital presence and improve user engagement.",
-    quote: `The team demonstrated a deep understanding of our requirements and delivered a solution that was both visually appealing and highly functional. Communication was clear throughout the project.`,
-    name: "Ali Haider",
-    designation: "COO, XYZ Company",
+      "Sebuah pikiran",
+    quote: `Pikirnya saya masih muda, saya masih sehat. udah gak ada COVID lagi, buat apa sih asuransi ? `,
+    // name: "Ali Haider",
+    // designation: "COO, XYZ Company",
   },
   {
     message:
-      "Professional, reliable, and creative—everything you want in a development partner.",
-    quote: `They delivered our project on time and went above and beyond to ensure our satisfaction. The new features have made a significant difference for our users. We look forward to working together again.`,
-    name: "Elon Max",
-    designation: "Managing Director, KFC Company",
+      "2024 : Anggota keluarga terkena sakit berat",
+    quote: `Kakak terkena sakit berat, Kanker. Puji Tuhan kakak sadar pentingnya asuransi. biaya pengobatan total full cover 300 Juta. pada akhirnya beliau berpulang, dan meninggalkan keluarga sejumlah uang melalui Asuransi.`,
+    // name: "Elon Max",
+    // designation: "Managing Director, KFC Company",
+  },
+    {
+    message:
+      "2024 - sekarang : menjadi Servicing Agent Prudential",
+    quote: `diajak bergabung oleh teman yang juga seorang agen Prudential. Mulai belajar dan memahami pentingnya asuransi untuk melindungi diri dan keluarga.`,
+    // name: "Elon Max",
+    // designation: "Managing Director, KFC Company",
   },
 ];
 
@@ -35,7 +42,7 @@ const Testimonial = () => {
   return (
     <div className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25">
       <div className="w-full h-full cursor-grab">
-        <p className="section-title mb-6 text-center">Testimonial</p>
+        <p className="section-title mb-6 text-center">Perjalanan Saya</p>
         <Swiper
           id="testimonialSwiper"
           spaceBetween={30}
