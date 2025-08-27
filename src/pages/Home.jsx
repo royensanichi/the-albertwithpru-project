@@ -19,7 +19,10 @@ const Home = () => {
           <Profile />
         </div>
       </div>
-      <div className="bg-soft-white pt-30">
+      {/* <div className="bg-soft-white pt-50">
+      <Testimonial />
+      </div> */}
+      <div className="bg-soft-white pt-20">
         <WorkProcess />
       </div>
       {/* <Portfolio /> */}
@@ -33,7 +36,6 @@ const Home = () => {
         <Profession />
       </div> */}
       {/* <HappyClients /> */}
-      <Testimonial />
       <Contact />
     </div>
   );

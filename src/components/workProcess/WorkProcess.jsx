@@ -42,7 +42,7 @@ const WorkProcess = () => {
       id="work-process"
     >
       <div className="lg:pe-10 xl:pe-35.75 max-xs:mb-3 max-xl:mb-8">
-        <p className="section-title max-xl:text-center">Cara saya bekerja</p>
+        <p className="section-title max-xl:text-center">Cara Kami bekerja</p>
         <p className="mt-6 mb-4 md:text-[18px] text-sm font-normal max-xl:text-center text-gray-500">
           Saya dan tim akan selalu memastikan kebutuhan Anda dan keluarga sesuai.   
 

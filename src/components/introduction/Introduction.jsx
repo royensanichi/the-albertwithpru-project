@@ -36,13 +36,14 @@ const Introduction = () => {
       
       
       <div className="w-full flex flex-col justify-between max-lg:text-center z-10 ">
-        <div className="pt-13 me-31.5 w-full xl:w-auto transition-all duration-500 text-white drop-shadow-[0_0_4px_black]">
-          <p className="text-sm sm:text-base w-full
-          lg:w-auto text-center lg:text-start mb-3">
-            <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">
+        <div className="pt-4 me-31.5 w-full xl:w-auto transition-all duration-500 text-white">
+          <p className="text-sm sm:text-base w-full lg:w-auto text-center lg:text-start mb-3 lg:drop-shadow-[0_0_4px_black]">
+            <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full ">
               <span style={{color:"#13c4b5f6"}}>#Albert</span> with <span style={{color:"#ED1B2E"}}>Prudential</span>
             </span>
+            <span className="drop-shadow-[0_0_2px_black]">
              @albertwithpru | Servicing Agent Prudential
+             </span>
           </p>
           <p className="text-xs xxs:text-lg lg:text-xl my-6 bg-white rounded-xl text-black font-semibold p-4 opacity-90">
            "Siap membantu Anda merencanakan keuangan dan melindungi masa depan keluarga Anda."
@@ -50,7 +51,7 @@ const Introduction = () => {
           <p className="text-center lg:text-start">
             <a
               className="btn-primary btn btn-xs xxs:btn-lg text-white"
-              href="mailto:example@gmail.com"
+              href="https://wa.me/6287883916216?text=Hello, Saya ingin berkonsultansi dengan Anda!"
             >
               Konsultasi Gratis!
             </a>

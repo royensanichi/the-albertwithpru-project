@@ -19,40 +19,39 @@ const Form = () => {
   return (
     <div>
       <p className="text-[12px] xs:text-[14px] max-lg:text-center sm:text-lg font-normal text-soft-dark">
-        I'm always open to discussing product design work or partnership
-        opportunities.
+        Mohon isi form berikut, nanti submit akan otomatis langsung ke WhatsApp saya :
       </p>
       <div className="mx-2">
         <form className="flex flex-col gap-4 mt-4">
           <input
             type="text"
-            placeholder="Name*"
+            placeholder="Nama"
             className={`${commonClass}`}
             required
           />
           <input
             type="email"
-            placeholder="Email*"
+            placeholder="Email"
             className={`${commonClass}`}
             required
           />
           <input
             type="text"
-            placeholder="Location*"
+            placeholder="No.telp"
             className={`${commonClass}`}
             required
           />
 
           <div className="flex max-xs:flex-col max-xs:gap-4">
             <input
-              type="text"
-              placeholder="Budget*"
+              type="date"
+              placeholder="Tgl Lahir"
               className={`${commonClass} xs:w-[50%] me-5`}
               required
             />
             <input
               type="text"
-              placeholder="Subject*"
+              placeholder="Domisili saat ini"
               className={`${commonClass}`}
               required
             />
@@ -68,7 +67,7 @@ const Form = () => {
             type="submit"
             className="btn gap-3 max-lg:mx-auto btn-primary rounded-sm mt-5 text-[13px] md:text-[16px] w-fit font-semibold lg:mt-12.5 p-2 md:px-4"
           >
-            Submit {telegramSVG}
+            Kirim ke Whatsapp Albert! {telegramSVG}
           </button>
         </form>
       </div>
