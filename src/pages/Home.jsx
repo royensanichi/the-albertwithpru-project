@@ -19,10 +19,10 @@ const Home = () => {
           <Profile />
         </div>
       </div>
-      {/* <div className="bg-soft-white pt-50">
+      <div className="bg-soft-white pt-50">
       <Testimonial />
-      </div> */}
-      <div className="bg-soft-white pt-20">
+      </div>
+      <div className="bg-soft-white pt-0">
         <WorkProcess />
       </div>
       {/* <Portfolio /> */}
