@@ -8,7 +8,7 @@ const navItems = [
   { id: 3, name: "Cara Kerja", url: "work-process" },
   // { id: 4, name: "Portfolio", url: "portfolio" },
   // { id: 5, name: "Blog", url: "blog" },
-  // { id: 6, name: "Services", url: "services" },
+  { id: 6, name: "Kontak Langsung", url: "contact" },
 ];
 
 const handleMenuClick = () => {
@@ -92,7 +92,7 @@ const NavBar = () => {
             duration={900}
             className="flex items-center border-0 lg:max-xxl:ps-5"
           >
-            <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" /> 
+            {/* <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" />  */}
             <p className="max-w-screen text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
               #<span style={{color:"#13c4b5f6"}}>Albert</span>
               <span className={window.innerWidth < 500 ? "text-sm" : "text-lg"}>With</span>
