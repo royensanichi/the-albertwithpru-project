@@ -46,7 +46,8 @@ const Form = () => {
             <input
               type="date"
               placeholder="Tgl Lahir"
-              className={`${commonClass} xs:w-[50%] me-5`}
+              // className={`${commonClass} xs:w-[50%] me-5`}
+              className={`${commonClass}`}
               required
             />
             <input

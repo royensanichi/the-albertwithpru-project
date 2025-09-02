@@ -40,17 +40,17 @@ const Profile = () => {
             className={`text-xs xs:text-[16px] lg:text-lg font-normal max-md:text-center text-gray-600`}
           >
             <p className="mb-3">
-              <b>Jadi nasabah asuransi selama 2 tahun </b>, berujung jadi <b>Korban iming-iming agen</b> & <b className={"text-xl"}>Ditinggal agen</b>. 
+              <b className={"text-xl"}>Jadi nasabah asuransi selama 2 Tahun</b>, dan akhirnya menjadi <b className={"text-xl"}>Korban iming-iming agen dan ditinggal agen</b>. 
             </p>
             <p className={``}>
-              Saya menjadi saksi hidup saat Alm. kakak sakit sampai berpulang, 
-              Prudential membantu meringankan beban keluarga kami dan menepati janji kontrak yang dibuat diantara kakak dan Prudential.
+              Tidak lupa saat Saya menjadi saksi hidup saat Alm. kakak dari sakit sampai berpulang, 
+              Prudential menepati janji kontrak yang dibuat diantara kakak dan Prudential untuk biaya berobat di rumah sakit hingga beliau tutup usia.
             </p>
             <p className="mt-3">
               Dari saat itulah Saya ingin menjadi agen yang setia dan bisa membantu orang-orang merencanakan keuangan dan melindungi masa depan keluarga yang membutuhkan.
             </p>
             <b className="mt-3 block">
-            "Selalu Berikan Yang Terbaik untuk Keluarga Mu."  
+            "Selalu Berikan Yang Terbaik untuk Keluarga Mu."
             </b>
           </div>
           {/* <div className="mt-8 flex max-md:justify-center">

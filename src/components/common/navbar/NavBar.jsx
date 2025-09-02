@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../../../assets/prudential-logo-128.png";
+import logo from "../../../assets/albertwithpru128.png";
 import { Link } from "react-scroll";
 
 const navItems = [
@@ -92,7 +92,7 @@ const NavBar = () => {
             duration={900}
             className="flex items-center border-0 lg:max-xxl:ps-5"
           >
-            {/* <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" />  */}
+            <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" /> 
             <p className="max-w-screen text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
               #<span style={{color:"#13c4b5f6"}}>Albert</span>
               <span className={window.innerWidth < 500 ? "text-sm" : "text-lg"}>With</span>
