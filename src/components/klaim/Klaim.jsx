@@ -72,7 +72,7 @@ const Klaim = () => {
         >
           {klaimData.map((klaim, index) => (
             <SwiperSlide key={index}>
-                <img src={klaim.img} className="justify-self-center max-h-128 object-cover rounded-xl" alt={`Klaim ${index}`} />
+                <img src={klaim.img} className="justify-self-center max-h-192 object-cover rounded-xl" alt={`Klaim ${index}`} />
             <KlaimTemplate klaim={klaim} />
             </SwiperSlide>
           ))}

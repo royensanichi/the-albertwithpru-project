@@ -49,6 +49,13 @@ const testimonialData = [
     // name: "Elon Max",
     // designation: "Managing Director, KFC Company",
   },
+    {
+    message: "2025 : Membuat website AlbertWithPru.com ",
+    quote: `Membuat website AlbertWithPru.com sendiri, karena dengan adanya web ini siapapun bisa langsung bertanya kepada saya tanpa harus mencari2 lagi`,
+    img: siloam,
+    // name: "Elon Max",
+    // designation: "Managing Director, KFC Company",
+  },
 ];
 
 const Testimonial = () => {

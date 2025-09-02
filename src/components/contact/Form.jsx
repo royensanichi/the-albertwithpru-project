@@ -57,8 +57,9 @@ Pesan: ${form.message}
   return (
     <div>
       <p className="text-[12px] xs:text-[14px] max-lg:text-center sm:text-lg font-normal text-soft-dark">
-        Mohon isi form berikut, saya akan menghubungi Anda secepatnya.
+        Mohon isi form berikut, saya akan menghubungi Anda secepatnya.  
       </p>
+      <span className="text-xs text-gray-500">*Data Anda 100% aman dan tidak akan dibagikan ke pihak manapun. </span>
       <div className="mx-2">
         <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit}>
           <input
