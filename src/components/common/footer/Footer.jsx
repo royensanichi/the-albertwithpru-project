@@ -3,8 +3,8 @@ import logo from "../../../assets/logo.png";
 /* Footer nabLinks */
 const navItems = [
   { id: 1, name: "Home", url: "/" },
-  { id: 2, name: "Tentang Saya", url: "/" },
-  { id: 3, name: "Cara Saya Bekerja", url: "/" },
+  { id: 2, name: "Instagram", url: "https://www.instagram.com/albertsany/" },
+  { id: 3, name: "Threads", url: "https://www.threads.com/@albertwithpru" },
   // { id: 4, name: "Portfolio", url: "Portfolio" },
   // { id: 5, name: "Blog", url: "Blog" },
   // { id: 6, name: "Services", url: "Services" },
