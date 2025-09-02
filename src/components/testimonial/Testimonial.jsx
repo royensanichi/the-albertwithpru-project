@@ -12,6 +12,7 @@ import pruactive from "../../assets/images/exp/pruactive.webp";
 import empurau from "../../assets/images/exp/emp.webp";
 import nextgen from "../../assets/images/exp/nextgen.webp";
 import siloam from "../../assets/images/exp/prusiloam.webp";
+import web from "../../assets/images/exp/albertwithpruweb.webp";
 const testimonialData = [
   {
     message: "2024 : Menjadi Agen PruVenture",
@@ -51,8 +52,8 @@ const testimonialData = [
   },
     {
     message: "2025 : Membuat website AlbertWithPru.com ",
-    quote: `Membuat website AlbertWithPru.com sendiri, karena dengan adanya web ini siapapun bisa langsung bertanya kepada saya tanpa harus mencari2 lagi`,
-    img: siloam,
+    quote: `Membuat website AlbertWithPru.com agar siapapun bisa langsung bertanya kepada saya tanpa harus mencari2 lagi`,
+    img: web,
     // name: "Elon Max",
     // designation: "Managing Director, KFC Company",
   },
