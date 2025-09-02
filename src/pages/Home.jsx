@@ -23,6 +23,8 @@ const Home = () => {
       </div>
       <div className="bg-soft-white pt-50">
       <Testimonial />
+      </div>
+      <div className="bg-gray-300 pt-20">
       <Klaim/>
       </div>
       {/* <div className="bg-soft-white pt-0">
