@@ -5,9 +5,10 @@ import { Link } from "react-scroll";
 const navItems = [
   { id: 1, name: "Home", url: "introduction" },
   { id: 2, name: "Tentang Saya", url: "profile" },
-  { id: 3, name: "Cara Kerja", url: "work-process" },
+  { id: 3, name: "Klaim", url: "klaim" },
+  // { id: 3, name: "Cara Kerja", url: "work-process" },
   // { id: 4, name: "Portfolio", url: "portfolio" },
-  // { id: 5, name: "Blog", url: "blog" },
+  { id: 5, name: "Blog", url: "blog" },
   { id: 6, name: "Kontak Langsung", url: "contact" },
 ];
 

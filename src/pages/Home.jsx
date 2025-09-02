@@ -10,6 +10,7 @@ import HappyClients from "../components/happyClients/HappyClients";
 import Testimonial from "../components/testimonial/Testimonial";
 import Contact from "../components/contact/Contact";
 import "../../index.css";
+import Klaim from "../components/klaim/Klaim";
 
 const Home = () => {
   return (
@@ -22,12 +23,13 @@ const Home = () => {
       </div>
       <div className="bg-soft-white pt-50">
       <Testimonial />
+      <Klaim/>
       </div>
       {/* <div className="bg-soft-white pt-0">
         <WorkProcess />
       </div> */}
       {/* <Portfolio /> */}
-      <Faq />
+      {/* <Faq /> */}
       {/* <div className="bg-gray-900">
         <WorkTogether />
       </div> */}

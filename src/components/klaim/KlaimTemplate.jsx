@@ -8,7 +8,7 @@ const KlaimTemplate = ({ klaim }) => {
       </div>
       <div className="text-center">
         <p className="text-[14px] sm:text-lg font-medium pb-6">
-          “{klaim?.quote}”
+           {klaim?.quote && klaim.quote}
         </p>
         <div className="mx-auto">
           <p className="text-[14px] sm:text-[16px] md:text-lg font-medium mb-2">
