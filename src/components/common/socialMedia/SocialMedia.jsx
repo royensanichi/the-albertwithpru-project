@@ -12,7 +12,7 @@ const socialIcons = [
   // { icon: faFacebookF, link: "#!" },
   // { icon: faDribbble, link: "#!" },
   { icon: faInstagram, link: "https://www.instagram.com/albertsany/" },
-  { icon: faWhatsapp, link: "https://wa.me/6287883916216?text=Hello, Saya ingin berkonsultansi dengan Anda!" },
+  // { icon: faWhatsapp, link: "https://wa.me/6287883916216?text=Hello, Saya ingin berkonsultansi dengan Anda!" },
   // { icon: faLinkedin, link: "#!" },
   // { icon: faBehance, link: "#!" },
 ];

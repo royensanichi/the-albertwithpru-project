@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const telegramSVG = (
   <svg
     className="w-4 md:w-6 aspect-square"
@@ -16,59 +18,113 @@ const commonClass =
   "input input-lg border-0 border-b-2 focus:outline-none focus:placeholder:text-picto-primary placeholder:text-[15px] md:placeholder:text-lg focus:border-picto-primary border-[#E6E8EB] w-full rounded-none px-0";
 
 const Form = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    dob: "",
+    city: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const whatsappMessage = `
+Halo Albert, Saya ingin berkonsultansi dengan Anda!
+
+Berikut adalah informasi kontak saya:
+
+Nama: ${form.name}
+Email: ${form.email}
+No. Telp: ${form.phone}
+Tgl Lahir: ${form.dob}
+Domisili: ${form.city}
+Pesan: ${form.message}
+    `;
+
+    const url = `https://wa.me/6287883916216?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(url, "_blank"); // buka di tab baru
+  };
+
   return (
     <div>
       <p className="text-[12px] xs:text-[14px] max-lg:text-center sm:text-lg font-normal text-soft-dark">
-        Mohon isi form berikut, nanti submit akan otomatis langsung ke WhatsApp saya :
+        Mohon isi form berikut, saya akan menghubungi Anda secepatnya.
       </p>
       <div className="mx-2">
-        <form className="flex flex-col gap-4 mt-4">
+        <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit}>
           <input
             type="text"
+            name="name"
             placeholder="Nama"
-            className={`${commonClass}`}
+            className={commonClass}
+            value={form.name}
+            onChange={handleChange}
             required
           />
           <input
             type="email"
+            name="email"
             placeholder="Email"
-            className={`${commonClass}`}
+            className={commonClass}
+            value={form.email}
+            onChange={handleChange}
             required
           />
           <input
             type="text"
+            name="phone"
             placeholder="No.telp"
-            className={`${commonClass}`}
+            className={commonClass}
+            value={form.phone}
+            onChange={handleChange}
             required
           />
 
-          <div className="flex max-xs:flex-col max-xs:gap-4">
+          <div className="">
             <input
               type="date"
-              placeholder="Tgl Lahir"
-              // className={`${commonClass} xs:w-[50%] me-5`}
-              className={`${commonClass}`}
+              name="dob"
+              className={commonClass}
+              value={form.dob}
+              onChange={handleChange}
               required
+              placeholder="tanggal lahir"
             />
+            <span className="text-xs text-gray-500">Tanggal lahir</span>
             <input
               type="text"
+              name="city"
               placeholder="Domisili saat ini"
-              className={`${commonClass}`}
+              className={commonClass}
+              value={form.city}
+              onChange={handleChange}
               required
             />
           </div>
 
           <input
             type="text"
-            placeholder="Message*"
-            className={`${commonClass}`}
+            name="message"
+            placeholder="Pesan / Pertanyaan"
+            className={commonClass}
+            value={form.message}
+            onChange={handleChange}
             required
           />
           <button
             type="submit"
             className="btn gap-3 max-lg:mx-auto btn-primary rounded-sm mt-5 text-[13px] md:text-[16px] w-fit font-semibold lg:mt-12.5 p-2 md:px-4"
           >
-            Kirim ke Whatsapp Albert! {telegramSVG}
+            Whatsapp ke Albert {telegramSVG}
           </button>
         </form>
       </div>

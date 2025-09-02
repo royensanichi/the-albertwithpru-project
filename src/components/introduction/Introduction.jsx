@@ -25,23 +25,20 @@ const informationSummaryData = [
 const Introduction = () => {
   return (
     <div
-      className="flex max-lg:flex-col-reverse sm:justify-between pt-10 lg:pt-31.5 lg:mb-27.5 max-xl:gap-2 p-2 max-xxl:px-4"
+      className="flex max-lg:flex-col-reverse sm:justify-between pt-20 lg:pt-31.5 lg:mb-27.5 max-xl:gap-2 p-2 max-xxl:px-4"
       id="introduction"
     >
-     
       <img  src={ window.innerWidth > 1024 ? group : siloam}
           alt="group" 
              className="absolute inset-0 w-full max-h-350 object-cover opacity-60 -z-0 blur-xs"
       />
-      
-      
       <div className="w-full flex flex-col justify-between max-lg:text-center z-10 ">
         <div className="pt-4 me-31.5 w-full xl:w-auto transition-all duration-500 text-white">
           <p className="text-sm sm:text-base w-full lg:w-auto text-center lg:text-start mb-3 drop-shadow-[0_0_4px_black]">
             {/* <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full ">
               <span style={{color:"#13c4b5f6"}}>#Albert</span> with <span style={{color:"#ED1B2E"}}>Prudential</span>
             </span> */}
-            <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">Agen Terbaik Anda</span>
+            <span className="font-semibold text-3xl sm:max-xl:text-5xl xl:text-7xl text-nowrap shrink-0 inline-block w-full">Agen Terbaik Anda</span>
             {/* <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">#AlbertWithPru</span> */}
             <span className="drop-shadow-[0_0_2px_black]">
             Albert Sany | Servicing Agent Prudential
@@ -53,7 +50,7 @@ const Introduction = () => {
           <p className="text-center lg:text-start">
             <a
               className="btn-primary btn btn-xs xxs:btn-lg text-white"
-              href="https://wa.me/6287883916216?text=Hello, Saya ingin berkonsultansi dengan Anda!"
+              href="https://wa.me/6287883916216?text=Halo Albert, Saya (Nama Anda) ingin berkonsultansi dengan Anda!"
             >
               Konsultasi Gratis!
             </a>
