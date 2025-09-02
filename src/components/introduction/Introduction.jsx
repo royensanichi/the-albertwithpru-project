@@ -41,7 +41,8 @@ const Introduction = () => {
             {/* <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full ">
               <span style={{color:"#13c4b5f6"}}>#Albert</span> with <span style={{color:"#ED1B2E"}}>Prudential</span>
             </span> */}
-            <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">#AlbertWithPru</span>
+            <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">Agen Terbaik Anda</span>
+            {/* <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">#AlbertWithPru</span> */}
             <span className="drop-shadow-[0_0_2px_black]">
             Albert Sany | Servicing Agent Prudential
              </span>
