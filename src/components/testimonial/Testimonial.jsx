@@ -6,6 +6,8 @@ import "swiper/css/pagination";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import TestimonialTemplate from "./TestimonialTemplate";
 import "./testimonial.css";
+import { LazyMotion, domAnimation } from "motion/react";
+import * as m from "motion/react-m";
 
 import pruuniversity from "../../assets/images/exp/pruuniversity.webp";
 import pruactive from "../../assets/images/exp/pruactive.webp";
@@ -50,7 +52,7 @@ const testimonialData = [
     // name: "Elon Max",
     // designation: "Managing Director, KFC Company",
   },
-    {
+  {
     message: "2025 : Membuat website AlbertWithPru.com ",
     quote: `Membuat website AlbertWithPru.com agar siapapun bisa langsung bertanya kepada saya tanpa harus mencari2 lagi`,
     img: web,
@@ -61,8 +63,15 @@ const testimonialData = [
 
 const Testimonial = () => {
   return (
+    <LazyMotion features={domAnimation}>
     <div className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25">
-      <div className="w-full h-full cursor-grab">
+      <m.div
+        className="w-full h-full cursor-grab"
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: [0, 1], y: [-30, 0] }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2 }}
+      >
         <p className="section-title mb-6 text-center">
           Perjalanan Saya bersama Prudential
         </p>
@@ -86,8 +95,9 @@ const Testimonial = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </m.div>
     </div>
+    </LazyMotion>
   );
 };
 

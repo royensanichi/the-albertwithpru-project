@@ -55,7 +55,7 @@ const Introduction = () => {
                 className="drop-shadow-[0_0_2px_black]"
                 //  initial={{ y: -80, opacity:0 }}
                 animate={{ y: [-80, 0], opacity: [0, 1] }}
-                transition={{ duration: 0.8, delay: 1.3 }}
+                transition={{ duration: 0.8, delay: 1 }}
               >
                 Albert Sany | Servicing Agent Prudential
               </m.span>
@@ -63,7 +63,7 @@ const Introduction = () => {
             <m.p
               className="text-xs xxs:text-lg lg:text-xl my-6 bg-white rounded-xl text-black font-semibold p-4 opacity-90"
               animate={{ y: [-30, 0], opacity: [0, 1] }}
-              transition={{ duration: 0.8, delay: 2.3 }}
+              transition={{ duration: 0.8, delay: 2 }}
             >
               "Siap membantu Anda merencanakan keuangan dan melindungi masa
               depan keluarga Anda."
@@ -73,7 +73,7 @@ const Introduction = () => {
                 className="btn-primary btn btn-xs xxs:btn-lg text-white"
                 href="https://wa.me/6287883916216?text=Halo Albert, Saya (Nama Anda) ingin berkonsultansi dengan Anda!"
                 animate={{ y: [-30, 0], opacity: [0, 1] }}
-                transition={{ duration: 0.8, delay: 2.3 }}
+                transition={{ duration: 0.8, delay: 2 }}
                 whileHover={{
                   scale: 1.1,
                   transition: { duration: 0 },

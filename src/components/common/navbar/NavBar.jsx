@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import logo from "../../../assets/albertwithpru128.png";
 import { Link } from "react-scroll";
+import { LazyMotion, domAnimation } from "motion/react";
+import * as m from "motion/react-m";
 
 const navItems = [
   { id: 1, name: "Home", url: "introduction" },
@@ -52,61 +54,74 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div
-      className={`sticky top-0 ${
-        position > 50
-          ? "bg-soft-white border-b border-gray-300"
-          : "bg-white border-white"
-      } z-50 transition-all duration-1000`}
-    >
-      <div className="navbar flex justify-between mx-auto content">
-        <div className="flex items-center justify-between">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+    <LazyMotion features={domAnimation}>
+      <m.div
+        className={`sticky top-0 ${
+          position > 50
+            ? "bg-soft-white border-b border-gray-300"
+            : "bg-white border-white"
+        } z-50 transition-all duration-1000`}
+
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0 }}
+      >
+        <div className="navbar flex justify-between mx-auto content">
+          <div className="flex items-center justify-between">
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabIndex={0}
+                className={`menu menu-lg dropdown-content rounded-box z-1 mt-3 w-lvw p-2 shadow font-semibold flex-nowrap bg-white text-black`}
+              >
+                {menu}
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className={`menu menu-lg dropdown-content rounded-box z-1 mt-3 w-lvw p-2 shadow font-semibold flex-nowrap bg-white text-black`}
+
+            <Link
+              href="#introduction"
+              to={`introduction`}
+              smooth={true}
+              duration={900}
+              className="flex items-center border-0 lg:max-xxl:ps-5"
             >
-              {menu}
-            </ul>
+              <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" />
+              <p className="max-w-screen text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
+                #<span style={{ color: "#13c4b5f6" }}>Albert</span>
+                <span
+                  className={window.innerWidth < 500 ? "text-sm" : "text-lg"}
+                >
+                  With
+                </span>
+                <span style={{ color: "#ED1B2E" }}>Prudential</span>
+              </p>
+            </Link>
           </div>
 
-          <Link
-            href="#introduction"
-            to={`introduction`}
-            smooth={true}
-            duration={900}
-            className="flex items-center border-0 lg:max-xxl:ps-5"
-          >
-            <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" /> 
-            <p className="max-w-screen text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
-              #<span style={{color:"#13c4b5f6"}}>Albert</span>
-              <span className={window.innerWidth < 500 ? "text-sm" : "text-lg"}>With</span>
-              <span style={{color:"#ED1B2E"}}>Prudential</span>
-            </p>
-          </Link>
-        </div>
-
-        <div className="lg:flex items-center">
-          <ul className="hidden lg:flex menu menu-horizontal text-[16px] font-medium md:shrink-0">
-            {menu}
-          </ul>
-          {/* <p className="">
+          <div className="lg:flex items-center">
+            <ul className="hidden lg:flex menu menu-horizontal text-[16px] font-medium md:shrink-0">
+              {menu}
+            </ul>
+            {/* <p className="">
             <Link
               className="btn btn-sm xs:btn-md sm:btn-lg btn-primary"
               href="#contact"
@@ -117,9 +132,10 @@ const NavBar = () => {
               Contact
             </Link>
           </p> */}
+          </div>
         </div>
-      </div>
-    </div>
+      </m.div>
+    </LazyMotion>
   );
 };
 
