@@ -19,6 +19,7 @@
         "@tailwindcss/vite": "^4.0.14",
         "localforage": "^1.10.0",
         "match-sorter": "^8.0.0",
+        "motion": "^12.23.12",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-fast-marquee": "^1.6.5",

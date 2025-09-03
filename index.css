@@ -5,14 +5,14 @@
 }
 
 * {
-  transition-property: all;
+  /* transition-property: all;
   transition-timing-function: var(
     --tw-ease,
     var(--default-transition-timing-function)
-  );
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  ); */
+  /* transition-duration: var(--tw-duration, var(--default-transition-duration));
   --tw-duration: 200ms;
-  transition-duration: 200ms;
+  transition-duration: 200ms; */
 }
 
 @theme {
@@ -23,6 +23,7 @@
   --color-picto-primary-dark: #650fa0;
   --color-soft-white: #f0f1f3;
   --color-soft-dark: #87909d;
+  --prured:#ED1B2E
 }
 /* 
 .text-stripes-prudential{
@@ -32,7 +33,7 @@
 } */
 
 .btn-primary {
-  @apply bg-picto-primary border-0 text-white hover:scale-[102%] hover:bg-picto-primary-dark transition-all duration-500;
+  @apply bg-picto-primary border-0 text-white hover:scale-[102%] hover:bg-picto-primary-dark transition-all;
 }
 body {
   font-family: "Work Sans", sans-serif;
