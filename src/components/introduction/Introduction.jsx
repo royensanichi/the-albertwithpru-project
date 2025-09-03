@@ -25,7 +25,7 @@ const informationSummaryData = [
 const Introduction = () => {
   return (
     <div
-      className="flex max-lg:flex-col-reverse sm:justify-between lg:pt-31.5 lg:mb-27.5 max-xl:gap-2 p-2 max-xxl:px-4"
+      className="flex max-lg:flex-col-reverse sm:justify-between lg:items-center lg:mb-27.5 max-xl:gap-2 p-2 max-xxl:px-4"
       id="introduction"
     >
       <img  src={ window.innerWidth > 1024 ? group : siloam}
@@ -69,7 +69,7 @@ const Introduction = () => {
       >
         
         <img
-          className={`shadow-2xl shadow-gray-200 w-full h-auto absolute bottom-auto object-contain bg-white rounded-3xl`}
+          className={`shadow-2xl shadow-gray-200 w-full h-auto absolute inset-0 m-auto object-contain bg-white rounded-3xl`}
           src={ window.innerWidth > 1024 ? group : siloam}
           alt="group"
         />

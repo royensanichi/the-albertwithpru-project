@@ -15,8 +15,8 @@ import siloam from "../../assets/images/exp/prusiloam.webp";
 import web from "../../assets/images/exp/albertwithpruweb.webp";
 const testimonialData = [
   {
-    message: "2024 : Menjadi Agen PruVenture",
-    quote: `Menjadi Agen PruVenture; Agen yang dibimbing khusus oleh Prudential untuk menjadi seorang Leader dan mampu untuk mendampingi nasabah-nasabahnya dengan baik.`,
+    message: "2024 : Certified Agen PruVenture",
+    quote: `Bersertifikasi sebagai Agen PruVenture; Agen yang dibimbing khusus oleh Prudential untuk menjadi seorang Leader dan mampu untuk mendampingi nasabah-nasabahnya dengan baik.`,
     img: pruuniversity,
     // name: "Esther Howard",
     // designation: "Managing Director, ABC Company",
