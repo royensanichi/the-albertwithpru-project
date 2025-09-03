@@ -69,7 +69,7 @@ const Introduction = () => {
       >
         
         <img
-          className={`shadow-2xl shadow-gray-200 w-full h-auto absolute inset-0 m-auto object-contain bg-white rounded-3xl`}
+          className={window.innerWidth > 1024 ? `shadow-2xl shadow-gray-200 w-full h-auto absolute inset-0 m-auto object-contain bg-white rounded-3xl sm:`: `shadow-2xl shadow-gray-200 w-full h-auto absolute bottom-auto object-contain bg-white rounded-3xl`}
           src={ window.innerWidth > 1024 ? group : siloam}
           alt="group"
         />
