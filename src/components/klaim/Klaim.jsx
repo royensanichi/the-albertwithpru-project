@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -14,47 +15,48 @@ import klaim2 from "../../assets/images/klaim/klaim2.webp";
 import klaim3 from "../../assets/images/klaim/klaim3.webp";
 import klaim4 from "../../assets/images/klaim/klaim4.webp";
 import klaim5 from "../../assets/images/klaim/klaim5.webp";
+
 const klaimData = [
   {
-    message: "Pria 41 Thn, Sakit DBD, Rawat Inap - FULL COVER 26 Juta rupiah",
-    // quote : "Pria 41 Thn, Sakit DBD - FULL COVER 26 Juta",
-    // quote: `Menjadi Agen PruVenture; Agen yang dibimbing khusus oleh Prudential untuk menjadi seorang Leader dan mampu untuk mendampingi nasabah-nasabahnya dengan baik.`,
+    message: `Pria 41 Thn, Sakit DBD
+    Rawat Inap - FULL COVER 26 Juta rupiah ✅`,
     img: klaim1,
-    // name: "Esther Howard",
-    // designation: "Managing Director, ABC Company",
   },
   {
     message:
-      "49 Thn, Operasi Katarak di Jakarta Eye Center - FULL COVER 37.5 Juta rupiah",
-    // quote:  "49 Thn, Operasi Katarak di Jakarta Eye Center - FULL COVER 37.5 Juta",
+      "49 Thn, Operasi Katarak di Jakarta Eye Center - FULL COVER 37.5 Juta rupiah ✅",
     img: klaim2,
-    // name: "Ali Haider",
-    // designation: "COO, XYZ Company",
-  },
-  {
-    message: "24 Thn, Sakit DBD, Rawat Inap 7 Hari - FULL COVER 18 Juta rupiah",
-    // quote: `Mengikuti Health Education dengan narasumber dokter dari Singapura untuk memperluas wawasan medis, sehingga dapat memberikan pendampingan yang lebih baik bagi nasabah.`,
-    img: klaim3,
-    // name: "Elon Max",
-    // designation: "Managing Director, KFC Company",
   },
   {
     message:
-      "Ambil Polis Jiwa 2017 dan 2019 sampai 1 Milyar untuk Keluarga Tercinta, Beliau Tutup Usia Tahun 2025.",
-    // quote: `Bersama generasi anak-anak muda lainnya untuk mendapatkan edukasi merencanakan masa depan karir dan pentingnya asuransi pribadi.`,
-    img: klaim4,
-    // name: "Elon Max",
-    // designation: "Managing Director, KFC Company",
+      "24 Thn, Sakit DBD, Rawat Inap 7 Hari - FULL COVER 18 Juta rupiah ✅",
+    img: klaim3,
   },
   {
-    message: "ODC Mata di Singapur - FULL COVER 194 Juta rupiah",
-    // quote: `Menjalin kerja sama dengan RS Siloam guna meningkatkan pemahaman masyarakat terkait pentingnya asuransi.`,
+    message:
+      "Buat Asuransi Jiwa Tahun 2017 dan Tahun 2019. Jumlah Manfaat terhitung 1.1 Milyar untuk Keluarga Tercinta, dan Beliau Tutup Usia Tahun 2025. diwariskan ke keluarga Sejumlah Rp. 1.123.651.170 ✅ ",
+    img: klaim4,
+  },
+  {
+    message: "ODC Mata di Singapur - FULL COVER 194 Juta rupiah ✅",
     img: klaim5,
-    // name: "Elon Max",
-    // designation: "Managing Director, KFC Company",
   },
 ];
+
 const Klaim = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (img) => {
+    setSelectedImage(img);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
   return (
     <LazyMotion features={domAnimation}>
       <div className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25">
@@ -65,7 +67,7 @@ const Klaim = () => {
           viewport={{ once: true }}
           transition={{ duration: 1.2 }}
         >
-          <p className="section-title mb-6 text-center">
+          <p className="section-title mb-6 text-center bg-red-700 rounded-xl text-white">
             Bukti Klaim Prudential
           </p>
           <Swiper
@@ -79,19 +81,48 @@ const Klaim = () => {
           >
             {klaimData.map((klaim, index) => (
               <SwiperSlide key={index}>
-                <div>
+                <div className="flex flex-col lg:flex-row items-center justify-center h-full px-4 lg:px-0">
+                  <KlaimTemplate klaim={klaim} />
                   <img
                     src={klaim.img}
-                    className="justify-self-center max-h-192 object-cover rounded-xl"
+                    onClick={() => {window.innerWidth > 1024 ? openModal(klaim.img) : null}} 
+                    className="justify-self-center max-w-80 object-fit rounded-xl shadow-xl mb-2 cursor-pointer"
                     alt={`Klaim ${index}`}
                   />
-                  <KlaimTemplate klaim={klaim} />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </m.div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <m.div
+          className="fixed inset-0 bg-gray-800 bg-opacity-30 flex justify-center items-center z-50"
+          onClick={closeModal}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [-10,0] }}
+          transition={{ duration: 0.3 }}
+        >
+          <div
+            className="relative bg-transparent p-4 rounded-lg shadow-lg max-w-3xl w-full"
+            onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside modal
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-black text-xl"
+            >
+              ✕
+            </button>
+            <img
+              src={selectedImage}
+              alt="Selected Klaim"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </m.div>
+      )}
     </LazyMotion>
   );
 };

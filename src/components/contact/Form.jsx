@@ -91,6 +91,7 @@ Pesan: ${form.message}
           />
 
           <div className="">
+            <span className="text-xs text-gray-500">Tanggal lahir</span>
             <input
               type="date"
               name="dob"
@@ -100,7 +101,6 @@ Pesan: ${form.message}
               required
               placeholder="tanggal lahir"
             />
-            <span className="text-xs text-gray-500">Tanggal lahir</span>
             <input
               type="text"
               name="city"
