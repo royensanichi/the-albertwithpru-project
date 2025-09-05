@@ -31,7 +31,7 @@ const Home = () => {
         <WorkProcess />
       </div> */}
       {/* <Portfolio /> */}
-      {/* <Faq /> */}
+      <Faq />
       {/* <div className="bg-gray-900">
         <WorkTogether />
       </div> */}

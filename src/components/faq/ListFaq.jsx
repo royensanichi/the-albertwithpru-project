@@ -1,33 +1,45 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { LazyMotion, domAnimation, AnimatePresence } from "motion/react";
+import * as m from "motion/react-m";
 
 const ListFaq = ({ data }) => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="max-w-106 rounded-lg outline-[#FFFFFF] hover:shadow-2xl duration-300 transition-all shadow-gray-300 border border-gray-200">
-      <img src={data?.image} alt={`${data?.title} image`} />
-      <div className="p-4 xs:p-8">
-        <p className="text-gray-400 text-xs font-medium">{data?.category}</p>
-        <p className="text-gray-900 text-md xxs:text-lg font-semibold pt-1 mb-3">
-          {data?.title}
-        </p>
-        <p
-          style={{ lineHeight: "20px", letterSpacing: "0%" }}
-          className="text-gray-600 text-xs xxs:text-[14px] text-wrap"
+    <LazyMotion features={domAnimation}>
+      <m.div className="w-full rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+        <button
+          onClick={() => setOpen(!open)}
+          className="w-full flex justify-between items-center p-4 text-left"
         >
-          {data?.description}
-        </p>
-        <a
-          href={data?.link}
-          className="btn hover:border-picto-primary hover:text-picto-primary bg-white text-sm xs:text-[16px] font-semibold hover:gap-3 xs:hover:gap-4 transition-all duration-300 mt-5 xs:py-5.75 px-6 max-sm:w-full"
-        >
-          Cek
-          <span className="ms-1 xs:ms-3">
-            <FontAwesomeIcon icon={faArrowRight} size="l" className="" />
-          </span>
-        </a>
-        {/* </p> */}
-      </div>
-    </div>
+          <p className="text-gray-900 text-lg font-bold">{data?.question}</p>
+          <m.div
+            animate={{ rotate: open ? 180 : 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            <FontAwesomeIcon icon={faChevronDown} className="text-gray-600" />
+          </m.div>
+        </button>
+
+        {open && (
+          <AnimatePresence>
+            <m.div
+              className="px-4 pb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-gray-700 text-base leading-relaxed">
+                {data?.answer}
+              </p>
+            </m.div>
+          </AnimatePresence>
+        )}
+      </m.div>
+    </LazyMotion>
   );
 };
 
