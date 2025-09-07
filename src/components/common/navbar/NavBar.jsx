@@ -10,7 +10,7 @@ const navItems = [
   { id: 3, name: "Klaim", url: "klaim" },
   // { id: 3, name: "Cara Kerja", url: "work-process" },
   // { id: 4, name: "Portfolio", url: "portfolio" },
-  // { id: 5, name: "Blog", url: "blog" },
+  { id: 5, name: "FAQ", url: "faq" },
   { id: 6, name: "Kontak Langsung", url: "contact" },
 ];
 

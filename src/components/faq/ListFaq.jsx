@@ -14,7 +14,7 @@ const ListFaq = ({ data }) => {
           onClick={() => setOpen(!open)}
           className="w-full flex justify-between items-center p-4 text-left"
         >
-          <p className="text-gray-900 text-lg font-bold">{data?.question}</p>
+          <p className="text-gray-900 text-lg font-semibold">{data?.question}</p>
           <m.div
             animate={{ rotate: open ? 180 : 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -30,7 +30,7 @@ const ListFaq = ({ data }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.7 }}
             >
               <p className="text-gray-700 text-base leading-relaxed">
                 {data?.answer}

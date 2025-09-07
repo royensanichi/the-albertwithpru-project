@@ -34,10 +34,10 @@ const listFaq = [
 },
 {
   id: 6,
-  question: "Apa itu masa tunggu dalam asuransi kesehatan?",
+  question: "Apa itu masa tunggu dalam asuransi kesehatan? / Bisa langsung dipakai ?",
   answer:
     `Masa tunggu adalah periode sejak polis aktif hingga manfaat bisa digunakan.\n30 hari untuk seluruh jenis penyakit umum, 90 hari untuk penyakit kanker, dan 1 Tahun untuk 18 penyakit khusus termasuk AIDS / HIV. \n
-    untuk KECELAKAAN, TIDAK ADA MASA TUNGGU`,
+    bagaimana bila Kecelakaan ?  Kecelakaan tidak ada masa tunggunya, bisa langsung digunakan asuransi kesehatannya.`,
 }
 ];
 
@@ -46,7 +46,7 @@ const Faq = () => {
   return (
     <div
       className="content mt-10 md:mt-15 xl:mt-25 mb-10 md:mb-25 max-xxl:p-2"
-      id="portfolio"
+      id="faq"
     >
       <div className="xl:mb-17.5 mb-5">
         <div className="max-sm:px-2 text-center mx-auto max-w-144.25">
