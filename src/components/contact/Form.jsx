@@ -35,9 +35,9 @@ const Form = () => {
     e.preventDefault();
 
     const whatsappMessage = `
-Halo Albert, Saya ingin berkonsultansi dengan Anda!
+Halo Albertwithpru, Saya ingin berkonsultansi dengan Anda!
 
-Berikut adalah informasi kontak saya:
+Berikut adalah informasi saya:
 
 Nama: ${form.name}
 Email: ${form.email}
@@ -45,6 +45,8 @@ No. Telp: ${form.phone}
 Tgl Lahir: ${form.dob}
 Domisili: ${form.city}
 Pesan: ${form.message}
+
+terima kasih.
     `;
 
     const url = `https://wa.me/6287883916216?text=${encodeURIComponent(
