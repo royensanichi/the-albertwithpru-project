@@ -11,6 +11,7 @@ import Testimonial from "../components/testimonial/Testimonial";
 import Contact from "../components/contact/Contact";
 import "../../index.css";
 import Klaim from "../components/klaim/Klaim";
+import Insight from "../components/Insight/Insight";
 
 const Home = () => {
   return (
@@ -21,6 +22,9 @@ const Home = () => {
           <Profile />
         </div>
       </div>
+      {/* <div className="bg-gray-800 pt-20">
+      <Insight/>
+      </div> */}
       <div className="bg-soft-white pt-50">
       <Testimonial />
       </div>

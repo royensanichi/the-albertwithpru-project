@@ -1,72 +1,81 @@
+/* Tailwind & DaisyUI setup */
 @import "tailwindcss";
 @plugin "daisyui";
+
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake;
 }
 
-* {
-  /* transition-property: all;
-  transition-timing-function: var(
-    --tw-ease,
-    var(--default-transition-timing-function)
-  ); */
-  /* transition-duration: var(--tw-duration, var(--default-transition-duration));
-  --tw-duration: 200ms;
-  transition-duration: 200ms; */
+/* Required for Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
 }
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 
 html, body {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* iOS momentum */
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* ✅ make sure vertical scroll is allowed */
 }
 
+/* Custom Theme Variables */
 @theme {
-  --breakpoint-xxs: 21.25rem; /* COMMENT: 340px */
-  --breakpoint-xs: 23.125rem; /* COMMENT: 363px */
-  --breakpoint-xxl: 82.5rem; /* COMMENT: 1320px */
+  --breakpoint-xxs: 21.25rem; /* 340px */
+  --breakpoint-xs: 23.125rem; /* 363px */
+  --breakpoint-xxl: 82.5rem;  /* 1320px */
+
   --color-picto-primary: #13c4b5f6;
   --color-picto-primary-dark: #650fa0;
   --color-soft-white: #f0f1f3;
   --color-soft-dark: #87909d;
-  --prured:#ED1B2E
+  --prured: #ED1B2E;
 }
-/* 
-.text-stripes-prudential{
-  background: linear-gradient(to bottom, #ED1B2E 30%, white  50%, #13c4b5f6 70%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
 
+/* Custom Utilities */
 .btn-primary {
   @apply bg-picto-primary border-0 text-white hover:bg-picto-primary-dark;
 }
-body {
-  font-family: "Work Sans", sans-serif;
-}
 
 .content {
-  @apply max-xxl:w-full xxl:max-w-[1320px] xxl:mx-auto;
+  @apply w-full max-xxl:w-full xxl:max-w-[1320px] xxl:mx-auto;
 }
 
 .section-title {
-  @apply md:font-semibold text-3xl sm:text-4xl md:text-5xl font-medium;
+  @apply text-3xl sm:text-4xl md:text-5xl font-medium md:font-semibold;
 }
 
 .center {
   @apply flex justify-center items-center;
 }
 
+/* Background Gradients */
 .introduction-profile-background {
   background: radial-gradient(
       circle at 12% 100%,
       #ffe2b0f5 1% 5px,
       transparent 15%
     ),
-    /* bottom left */
-      radial-gradient(circle at 95% -15%, #da4df166 5%, transparent 30%),
-    /* top right */
-      radial-gradient(circle at center right, #c4f5e9b2 2%, transparent 35%); /* center right */
+    radial-gradient(circle at 95% -15%, #da4df166 5%, transparent 30%),
+    radial-gradient(circle at center right, #c4f5e9b2 2%, transparent 35%);
 }
+
 .blog-background {
   background: radial-gradient(circle at -10% 0%, #da4df166 1%, transparent 25%),
     radial-gradient(circle at 110% 30%, #c4f5e9b2 5%, transparent 25%);
