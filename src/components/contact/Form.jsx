@@ -36,6 +36,7 @@ const Form = () => {
 
     const whatsappMessage = `
 Halo Albertwithpru, Saya ingin berkonsultansi dengan Anda!
+dengan Tujuan: ${form.topik}
 
 Berikut adalah informasi saya:
 
@@ -44,10 +45,13 @@ Email: ${form.email}
 No. Telp: ${form.phone}
 Tgl Lahir: ${form.dob}
 Domisili: ${form.city}
+Punya Polis Asuransi: ${form.hasInsurance === "ya" ? "Ya" : "Tidak"}
+${form.hasInsurance === "ya" ? `Asuransi: ${form.insuranceCompany}` : ""}
+
 Pesan: ${form.message}
 
-terima kasih.
-    `;
+Terima kasih.
+`;
 
     const url = `https://wa.me/6287883916216?text=${encodeURIComponent(
       whatsappMessage
@@ -59,9 +63,11 @@ terima kasih.
   return (
     <div>
       <p className="text-[12px] xs:text-[14px] max-lg:text-center sm:text-lg font-normal text-soft-dark">
-        Mohon isi form berikut, saya akan menghubungi Anda secepatnya.  
+        Mohon isi form berikut, saya akan menghubungi Anda secepatnya.
       </p>
-      <span className="text-xs text-gray-500">*Data Anda 100% aman dan tidak akan dibagikan ke pihak manapun. </span>
+      <span className="text-xs text-gray-500">
+        *Data Anda 100% aman dan tidak akan dibagikan ke pihak manapun.{" "}
+      </span>
       <div className="mx-2">
         <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit}>
           <input
@@ -92,11 +98,15 @@ terima kasih.
             required
           />
 
-          <div className="">
-            <span className="text-xs text-gray-500">Tanggal lahir</span>
+          <div className="mb-4">
+            <span className="text-xs text-gray-500 font-semibold">
+              Tanggal lahir
+            </span>
             <input
               type="date"
               name="dob"
+              min="1900-01-01"
+              max={new Date().toISOString().split("T")[0]}
               className={commonClass}
               value={form.dob}
               onChange={handleChange}
@@ -114,15 +124,88 @@ terima kasih.
             />
           </div>
 
+          <div className="mb-4">
+            <span className="text-xs text-gray-500 font-semibold">
+              Apakah Memiliki Asuransi Pribadi ?
+            </span>
+            <div className="flex gap-4 mt-1">
+              <label className="flex items-center gap-1">
+                <input
+                  type="radio"
+                  name="hasInsurance"
+                  value="ya"
+                  checked={form.hasInsurance === "ya"}
+                  onChange={handleChange}
+                />
+                Ya
+              </label>
+              <label className="flex items-center gap-1">
+                <input
+                  type="radio"
+                  name="hasInsurance"
+                  value="tidak"
+                  checked={form.hasInsurance === "tidak"}
+                  onChange={handleChange}
+                />
+                Tidak
+              </label>
+            </div>
+
+            {form.hasInsurance === "ya" && (
+              <div className="mt-2">
+                <select
+                  name="insuranceCompany"
+                  className={commonClass}
+                  value={form.insuranceCompany}
+                  onChange={handleChange}
+                >
+                  <option value="">Pilih Asuransi</option>
+                  <option value="prudential">Prudential</option>
+                  <option value="allianz">Allianz</option>
+                  <option value="generali">Generali</option>
+                  <option value="lainnya">Lainnya</option>
+                </select>
+              </div>
+            )}
+          </div>
+
+          <div className="">
+            <span className="text-xs text-gray-500 font-semibold">
+              Tujuan Anda :
+            </span>
+            <select
+              name="topik"
+              className={commonClass}
+              value={form.topik}
+              onChange={handleChange}
+            >
+              <option value="">Pilih Topik Anda</option>
+              <option value="review polis asuransi">
+                Bantu Review Polis Asuransi
+              </option>
+              <option value="berapa harga premi saya">
+                Berapa Harga Premi Saya
+              </option>
+              <option value="berapa harga premi anggota keluarga saya">
+                Berapa Harga Premi Anggota Keluarga Saya
+              </option>
+              <option value="tanya-tanya asuransi">
+                Tanya-tanya seputar asuransi
+              </option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+          </div>
+
           <input
             type="text"
             name="message"
-            placeholder="Pesan / Pertanyaan"
+            placeholder="Pesan / Pertanyaan Anda"
             className={commonClass}
             value={form.message}
             onChange={handleChange}
             required
           />
+
           <button
             type="submit"
             className="btn gap-3 max-lg:mx-auto btn-primary rounded-sm mt-5 text-[13px] md:text-[16px] w-fit font-semibold lg:mt-12.5 p-2 md:px-4"

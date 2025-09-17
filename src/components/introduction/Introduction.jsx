@@ -52,9 +52,9 @@ const Introduction = () => {
               </m.span>
               {/* <span className="font-semibold text-2xl sm:max-xl:text-5xl xl:text-6xl text-nowrap shrink-0 inline-block w-full">#AlbertWithPru</span> */}
               <m.span
-                className="drop-shadow-[0_0_2px_black]"
+                className="drop-shadow-[0_0_2px_black] block text-base sm:text-md lg:text-xl mt-3"
                 //  initial={{ y: -80, opacity:0 }}
-                animate={{ y: [-80, 0], opacity: [0, 1] }}
+                animate={{opacity: [0, 1] }}
                 transition={{ duration: 0.8, delay: 1 }}
               >
                 Albert Sany | Servicing Agent Prudential

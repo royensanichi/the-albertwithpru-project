@@ -60,7 +60,7 @@ const Faq = () => {
           </p>
         </div>
       </div>
-      <div className="mx-auto justify-center">
+      <div className="mx-auto justify-center items-center flex flex-col gap-4 max-w-4xl">
         {/* <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-6"> */}
         {listFaq.map((data, index) => (
           <ListFaq data={data} key={index} />

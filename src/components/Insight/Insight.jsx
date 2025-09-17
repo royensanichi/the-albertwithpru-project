@@ -1,6 +1,34 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const kumpulanInsight = [
+  {
+    id: 1,
+    title: "Apa aja sih jenis Asuransi Pribadi ?",
+    link: "#!",
+    // jelasin video segitiga kesehatan
+  },
+    {
+    id: 2,
+    title: "Tips biar gak salah milih Asuransi !",
+    link: "#!",
+    // jelasin video segitiga kesehatan
+  },
+    {
+    id: 3,
+    title: "Punya Asuransi = ",
+    link: "#!",
+    // jelasin video segitiga kesehatan
+  },
+    {
+    id: 4,
+    title: "Punya Asuransi = ",
+    link: "#!",
+    // jelasin video segitiga kesehatan
+  },
+  ]
+
+
 const Insight = () => {
   return (
     <div className="py-30 max-w-192 h-auto mx-auto px-2">
@@ -15,7 +43,7 @@ const Insight = () => {
           href="#!"
           className="btn btn-primary px-4 md:px-6.5 py-3 md:py-6 text-[12px] md:text-[16px]"
         >
-          Apa aja sih isi Asuransi Pribadi ? 
+          Apa aja sih jenis Asuransi Pribadi ? 
           {/* jelasin video segitiga kesehatan */}
           {/* <FontAwesomeIcon
             icon={faArrowRight}
