@@ -28,7 +28,7 @@ const menu = navItems.map((item) => (
       smooth={true}
       duration={1000}
       spy={true}
-      offset={-140}
+      offset={-120}
       activeStyle={{
         backgroundColor: "#ED1B2E",
         color: "white",
@@ -61,7 +61,6 @@ const NavBar = () => {
             ? "bg-soft-white border-b border-gray-300"
             : "bg-white border-white"
         } z-50 transition-all duration-1000`}
-
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0 }}
@@ -121,17 +120,6 @@ const NavBar = () => {
             <ul className="hidden lg:flex menu menu-horizontal text-[16px] font-medium md:shrink-0">
               {menu}
             </ul>
-            {/* <p className="">
-            <Link
-              className="btn btn-sm xs:btn-md sm:btn-lg btn-primary"
-              href="#contact"
-              to={`contact`}
-              smooth={true}
-              duration={900}
-            >
-              Contact
-            </Link>
-          </p> */}
           </div>
         </div>
       </m.div>

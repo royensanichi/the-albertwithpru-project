@@ -1,8 +1,8 @@
 import siloam from "../../assets/images/prusiloam.jpg";
 import group from "../../assets/images/group_photo.jpg";
 import "./introduction.css";
-import InformationSummary from "./InformationSummary";
 import { LazyMotion, domAnimation } from "motion/react";
+import { Link } from "react-scroll";
 import * as m from "motion/react-m";
 
 // Information summary data
@@ -25,6 +25,12 @@ const informationSummaryData = [
 ];
 
 const Introduction = () => {
+  const handleMenuClick = () => {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+  };
+
   return (
     <LazyMotion features={domAnimation}>
       <m.div
@@ -54,7 +60,7 @@ const Introduction = () => {
               <m.span
                 className="drop-shadow-[0_0_2px_black] block text-base sm:text-md lg:text-xl mt-3"
                 //  initial={{ y: -80, opacity:0 }}
-                animate={{opacity: [0, 1] }}
+                animate={{ opacity: [0, 1] }}
                 transition={{ duration: 0.8, delay: 1 }}
               >
                 Albert Sany | Servicing Agent Prudential
@@ -68,20 +74,29 @@ const Introduction = () => {
               "Siap membantu Anda merencanakan keuangan dan melindungi masa
               depan keluarga Anda."
             </m.p>
-            <p className="text-center lg:text-start">
-              <m.a
-                className="btn-primary btn btn-xs xxs:btn-lg text-white"
-                href="https://wa.me/6287883916216?text=Halo Albert, Saya (Nama Anda) ingin berkonsultansi dengan Anda!"
-                animate={{ y: [-30, 0], opacity: [0, 1] }}
-                transition={{ duration: 0.8, delay: 2 }}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { duration: 0 },
-                }}
+            <m.div
+              className="text-center lg:text-start"
+              animate={{ y: [-30, 0], opacity: [0, 1] }}
+              transition={{ duration: 0.8, delay: 2 }}
+            >
+              <Link
+                onClick={handleMenuClick}
+                to="contact" // this must match the id="contact"
+                smooth={true}
+                duration={1000}
+                offset={0} // adjust so it stops above footer nicely
+                spy={true}
+                className="btn-primary btn btn-xs xxs:btn-lg text-white cursor-pointer inline-block"
               >
-                Konsultasi Gratis!
-              </m.a>
-            </p>
+                <span
+                  className="w-full h-full flex items-center justify-center"
+                  animate={{ y: [-30, 0], opacity: [0, 1] }}
+               
+                >
+                  Konsultasi Gratis!
+                </span>
+              </Link>
+            </m.div>
           </div>
 
           {/* Informasi Ringkas */}
