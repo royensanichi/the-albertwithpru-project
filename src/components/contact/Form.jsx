@@ -27,6 +27,25 @@ const Form = () => {
     message: "",
   });
 
+    const opsiPertanyaan = [
+      {value: "review polis asuransi",
+        label: "Bantu Review Polis Asuransi"
+      },
+      {value: "berapa harga premi saya",
+        label: "Berapa Harga Premi Saya"
+      },
+      {
+        value: "berapa harga premi anggota keluarga saya",
+        label: "Berapa Harga Premi Anggota Keluarga Saya"
+      },
+      {value: "tanya-tanya asuransi",
+        label: "Tanya-tanya seputar asuransi"
+      },
+      {value: "lainnya",
+        label: "Lainnya"
+      },
+    ]
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -69,7 +88,7 @@ Terima kasih.
         *Data Anda 100% aman dan tidak akan dibagikan ke pihak manapun.{" "}
       </span>
       <div className="mx-2">
-        <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-1 mt-4" onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
