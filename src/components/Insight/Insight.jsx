@@ -16,7 +16,7 @@ const kumpulanInsight = [
   },
     {
     id: 3,
-    title: "Punya Asuransi = ",
+    title: "Haruskan Review Polis Asuransi ? buat apa sih ?",
     link: "#!",
     // jelasin video segitiga kesehatan
   },

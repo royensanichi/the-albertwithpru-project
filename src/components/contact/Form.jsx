@@ -28,6 +28,9 @@ const Form = () => {
   });
 
     const opsiPertanyaan = [
+      {value: "",
+        label: "Pilih Topik Anda"
+      },
       {value: "review polis asuransi",
         label: "Bantu Review Polis Asuransi"
       },
@@ -54,7 +57,7 @@ const Form = () => {
     e.preventDefault();
 
     const whatsappMessage = `
-Halo Albertwithpru, Saya ingin berkonsultansi dengan Anda!
+Halo Albertwithpru, Saya ingin berkonsultansi
 dengan Tujuan: ${form.topik}
 
 Berikut adalah informasi saya:
@@ -66,7 +69,6 @@ Tgl Lahir: ${form.dob}
 Domisili: ${form.city}
 Punya Polis Asuransi: ${form.hasInsurance === "ya" ? "Ya" : "Tidak"}
 ${form.hasInsurance === "ya" ? `Asuransi: ${form.insuranceCompany}` : ""}
-
 Pesan: ${form.message}
 
 Terima kasih.
@@ -82,10 +84,10 @@ Terima kasih.
   return (
     <div>
       <p className="text-[12px] xs:text-[14px] max-lg:text-center sm:text-lg font-normal text-soft-dark">
-        Mohon isi form berikut, saya akan menghubungi Anda secepatnya.
+        Mohon isi form berikut, saya akan membalas pesan Anda secepatnya.
       </p>
       <span className="text-xs text-gray-500">
-        *Data Anda 100% aman dan tidak akan dibagikan ke pihak manapun.{" "}
+        *data Anda 100% tidak akan dibagikan ke pihak manapun.{" "}
       </span>
       <div className="mx-2">
         <form className="flex flex-col gap-1 mt-4" onSubmit={handleSubmit}>
@@ -198,7 +200,14 @@ Terima kasih.
               value={form.topik}
               onChange={handleChange}
             >
-              <option value="">Pilih Topik Anda</option>
+
+              {opsiPertanyaan.map((item, index) => (
+                <option value={item.value} key={index}>
+                  {item.label}
+                </option>
+              ))}
+
+              {/* <option value="">Pilih Topik Anda</option>
               <option value="review polis asuransi">
                 Bantu Review Polis Asuransi
               </option>
@@ -211,7 +220,7 @@ Terima kasih.
               <option value="tanya-tanya asuransi">
                 Tanya-tanya seputar asuransi
               </option>
-              <option value="lainnya">Lainnya</option>
+              <option value="lainnya">Lainnya</option> */}
             </select>
           </div>
 

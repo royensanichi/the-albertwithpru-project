@@ -17,20 +17,20 @@ import siloam from "../../assets/images/exp/prusiloam.webp";
 import web from "../../assets/images/exp/albertwithpruweb.webp";
 const testimonialData = [
   {
-    message: "2024 : Certified Agen PruVenture",
+    message: "2024 : Acara Next-Gen bersama Prudential",
+    quote: `Bersama generasi anak-anak muda lainnya untuk mendapatkan edukasi merencanakan masa depan karir dan pentingnya asuransi pribadi.`,
+    img: nextgen,
+    // name: "Elon Max",
+    // designation: "Managing Director, KFC Company",
+  },
+  {
+    message: "2024 : Bersertifikasi Agen PruVenture",
     quote: `Bersertifikasi sebagai Agen PruVenture; Agen yang dibimbing khusus oleh Prudential untuk menjadi seorang Leader dan mampu untuk mendampingi nasabah-nasabahnya dengan baik.`,
     img: pruuniversity,
     // name: "Esther Howard",
     // designation: "Managing Director, ABC Company",
   },
 
-  {
-    message: "2024 : Acara Next-Gen, Karir Opening untuk Generasi Muda",
-    quote: `Bersama generasi anak-anak muda lainnya untuk mendapatkan edukasi merencanakan masa depan karir dan pentingnya asuransi pribadi.`,
-    img: nextgen,
-    // name: "Elon Max",
-    // designation: "Managing Director, KFC Company",
-  },
   {
     message: "2024 : Empurau - Health Education from Singapore",
     quote: `Mengikuti Health Education dengan narasumber dokter dari Singapura untuk memperluas wawasan medis, sehingga dapat memberikan pendampingan yang lebih baik bagi nasabah.`,
@@ -64,39 +64,39 @@ const testimonialData = [
 const Testimonial = () => {
   return (
     <LazyMotion features={domAnimation}>
-    <div className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25">
-      <m.div
-        className="w-full h-full cursor-grab"
-        initial={{ opacity: 0, y: -10 }}
-        whileInView={{ opacity: [0, 1], y: [-30, 0] }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2 }}
-      >
-        <p className="section-title mb-6 text-center">
-          Perjalanan Saya bersama Prudential
-        </p>
-        <Swiper
-          id="testimonialSwiper"
-          spaceBetween={30}
-          navigation={false}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[EffectFade, Navigation, Pagination]}
+      <div className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25">
+        <m.div
+          className="w-full h-full cursor-grab"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: [0, 1], y: [-30, 0] }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
         >
-          {testimonialData.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={testimonial.img}
-                className="justify-self-center max-h-128 object-cover rounded-xl"
-                alt={`Testimonial ${index}`}
-              />
-              <TestimonialTemplate testimonial={testimonial} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </m.div>
-    </div>
+          <p className="section-title mb-6 text-center">
+            Perjalanan Saya bersama Prudential
+          </p>
+          <Swiper
+            id="testimonialSwiper"
+            spaceBetween={30}
+            navigation={false}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[EffectFade, Navigation, Pagination]}
+          >
+            {testimonialData.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={testimonial.img}
+                  className="justify-self-center max-h-128 object-cover rounded-xl"
+                  alt={`Testimonial ${index}`}
+                />
+                <TestimonialTemplate testimonial={testimonial} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </m.div>
+      </div>
     </LazyMotion>
   );
 };
