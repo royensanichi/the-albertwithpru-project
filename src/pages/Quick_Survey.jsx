@@ -50,11 +50,11 @@ const Quick_Survey = () => {
       case 0:
         return { question: "Apakah Anda sudah memiliki asuransi pribadi?", buttons: ["Yes", "No"] };
       case 1:
-        return { question: "Kamu paham dengan yang kamu punya?", buttons: ["Yes", "No"] };
+        return { question: "Apakah Kamu mengerti Asuransi yang kamu miliki sekarang ?", buttons: ["Yes", "No"] };
       case 2:
         return { question: "Pilih jenis asuransi kamu:", buttons: ["Kesehatan", "Jiwa", "UnitLink"] };
       case 3:
-        return { question: "Mau dibantu review polis?", buttons: ["Yes", "No"] };
+        return { question: "Apakah kamu butuh bantuan untuk review polis?", buttons: ["Yes", "No"] };
       case 4:
         return {
           question: "Pilih bantuan yang Anda butuhkan:",
