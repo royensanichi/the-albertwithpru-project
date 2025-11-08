@@ -4,6 +4,8 @@ import { router } from "./routes/Router";
 import { RouterProvider } from "react-router-dom";
 import "../index.css";
 import Lenis from "@studio-freight/lenis";
+// in main.jsx or App.jsx
+import { SurveyProvider } from "./context/surveyContext";
 
 function AppWrapper() {
   useEffect(() => {
@@ -25,6 +27,8 @@ function AppWrapper() {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AppWrapper />
+    <SurveyProvider>
+      <AppWrapper />
+    </SurveyProvider>
   </React.StrictMode>
 );
