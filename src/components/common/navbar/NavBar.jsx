@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../../../assets/albertwithpru128.png";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 import { LazyMotion, domAnimation } from "motion/react";
 import * as m from "motion/react-m";
 
@@ -8,8 +9,6 @@ const navItems = [
   { id: 1, name: "Home", url: "introduction" },
   { id: 2, name: "Tentang Saya", url: "profile" },
   { id: 3, name: "Klaim", url: "klaim" },
-  // { id: 3, name: "Cara Kerja", url: "work-process" },
-  // { id: 4, name: "Portfolio", url: "portfolio" },
   { id: 5, name: "FAQ", url: "faq" },
   { id: 6, name: "Kontak Langsung", url: "contact" },
 ];
@@ -33,7 +32,7 @@ const menu = navItems.map((item) => (
         backgroundColor: "#ED1B2E",
         color: "white",
       }}
-      className={`hover:text-picto-primary px-5 py-3 mx-1`}
+      className="hover:text-picto-primary px-5 py-3 mx-1"
     >
       {item.name}
     </Link>
@@ -42,6 +41,7 @@ const menu = navItems.map((item) => (
 
 const NavBar = () => {
   const [position, setPosition] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +66,9 @@ const NavBar = () => {
         transition={{ duration: 0 }}
       >
         <div className="navbar flex justify-between mx-auto content">
+          {/* LEFT SIDE */}
           <div className="flex items-center justify-between">
+            {/* Dropdown mobile */}
             <div className="dropdown">
               <div
                 tabIndex={0}
@@ -90,21 +92,30 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className={`menu menu-lg dropdown-content rounded-box z-1 mt-3 w-lvw p-2 shadow font-semibold flex-nowrap bg-white text-black`}
+                className="menu menu-lg dropdown-content rounded-box z-1 mt-3 w-lvw p-2 shadow font-semibold bg-white text-black"
               >
                 {menu}
+                <li className="mt-2">
+                  <button
+                    onClick={() => navigate("/quicksurvey")}
+                    className="btn btn-primary w-full text-white"
+                  >
+                    Quick Survey
+                  </button>
+                </li>
               </ul>
             </div>
 
+            {/* Logo */}
             <Link
               href="#introduction"
-              to={`introduction`}
+              to="introduction"
               smooth={true}
               duration={900}
               className="flex items-center border-0 lg:max-xxl:ps-5"
             >
               <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" />
-              <p className="max-w-screen text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
+              <p className="text-2xl sm:text-[32px] my-auto ms-[12px] font-semibold">
                 #<span style={{ color: "#13c4b5f6" }}>Albert</span>
                 <span
                   className={window.innerWidth < 500 ? "text-sm" : "text-lg"}
@@ -116,10 +127,19 @@ const NavBar = () => {
             </Link>
           </div>
 
-          <div className="lg:flex items-center">
+          {/* RIGHT SIDE */}
+          <div className="lg:flex items-center gap-3">
             <ul className="hidden lg:flex menu menu-horizontal text-[16px] font-medium md:shrink-0">
               {menu}
             </ul>
+
+            {/* Tombol Quick Survey */}
+            <button
+              onClick={() => navigate("/quicksurvey")}
+              className="hidden lg:block btn btn-primary text-white rounded-full px-4 py-2 text-sm font-semibold hover:bg-red-600 transition"
+            >
+              Quick Survey
+            </button>
           </div>
         </div>
       </m.div>

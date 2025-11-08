@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const telegramSVG = (
   <svg
@@ -18,6 +19,8 @@ const commonClass =
   "input input-lg border-0 border-b-2 focus:outline-none focus:placeholder:text-picto-primary placeholder:text-[15px] md:placeholder:text-lg focus:border-picto-primary border-[#E6E8EB] w-full rounded-none px-0";
 
 const Form = () => {
+  const location = useLocation();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -25,29 +28,33 @@ const Form = () => {
     dob: "",
     city: "",
     message: "",
+    hasInsurance: "",
+    insuranceCompany: "",
+    insuranceDuration: "",
+    topik: "",
   });
 
-    const opsiPertanyaan = [
-      {value: "",
-        label: "Pilih Topik Anda"
-      },
-      {value: "review polis asuransi",
-        label: "Bantu Review Polis Asuransi"
-      },
-      {value: "berapa harga premi saya",
-        label: "Berapa Harga Premi Saya"
-      },
-      {
-        value: "berapa harga premi anggota keluarga saya",
-        label: "Berapa Harga Premi Anggota Keluarga Saya"
-      },
-      {value: "tanya-tanya asuransi",
-        label: "Tanya-tanya seputar asuransi"
-      },
-      {value: "lainnya",
-        label: "Lainnya"
-      },
-    ]
+  useEffect(() => {
+    if (location.state) {
+      setForm((prev) => ({
+        ...prev,
+        ...location.state, // Prefill dari Quick_Survey
+      }));
+    }
+  }, [location.state]);
+
+  const opsiPertanyaan = [
+    { value: "", label: "Pilih Topik Anda" },
+    { value: "review polis asuransi", label: "Bantu Review Polis Asuransi" },
+    { value: "berapa harga premi saya", label: "Berapa Harga Premi Saya" },
+    {
+      value: "berapa harga premi anggota keluarga saya",
+      label: "Berapa Harga Premi Anggota Keluarga Saya",
+    },
+    { value: "tanya-tanya asuransi", label: "Tanya-tanya seputar asuransi" },
+    { value: "saran / masukan", label: "Saran / Masukan" },
+    { value: "lainnya", label: "Lainnya" },
+  ];
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -68,6 +75,7 @@ No. Telp: ${form.phone}
 Tgl Lahir: ${form.dob}
 Domisili: ${form.city}
 Punya Polis Asuransi: ${form.hasInsurance === "ya" ? "Ya" : "Tidak"}
+${form.hasInsurance === "ya" ? `Durasi: ${form.insuranceDuration}` : ""}
 ${form.hasInsurance === "ya" ? `Asuransi: ${form.insuranceCompany}` : ""}
 Pesan: ${form.message}
 
@@ -77,8 +85,7 @@ Terima kasih.
     const url = `https://wa.me/6287883916216?text=${encodeURIComponent(
       whatsappMessage
     )}`;
-
-    window.open(url, "_blank"); // buka di tab baru
+    window.open(url, "_blank");
   };
 
   return (
@@ -87,8 +94,9 @@ Terima kasih.
         Mohon isi form berikut, saya akan membalas pesan Anda secepatnya.
       </p>
       <span className="text-xs text-gray-500">
-        *data Anda 100% tidak akan dibagikan ke pihak manapun.{" "}
+        *data Anda 100% tidak akan dibagikan ke pihak manapun.
       </span>
+
       <div className="mx-2">
         <form className="flex flex-col gap-1 mt-4" onSubmit={handleSubmit}>
           <input
@@ -132,7 +140,6 @@ Terima kasih.
               value={form.dob}
               onChange={handleChange}
               required
-              placeholder="tanggal lahir"
             />
             <input
               type="text"
@@ -173,24 +180,48 @@ Terima kasih.
             </div>
 
             {form.hasInsurance === "ya" && (
-              <div className="mt-2">
-                <select
-                  name="insuranceCompany"
-                  className={commonClass}
-                  value={form.insuranceCompany}
-                  onChange={handleChange}
-                >
-                  <option value="">Pilih Asuransi</option>
-                  <option value="prudential">Prudential</option>
-                  <option value="allianz">Allianz</option>
-                  <option value="generali">Generali</option>
-                  <option value="lainnya">Lainnya</option>
-                </select>
-              </div>
+              <>
+                {/* Durasi memiliki asuransi */}
+                {form.hasInsurance === "ya" && (
+                  <div className="mt-3">
+                    <span className="text-xs text-gray-500 font-semibold">
+                      Lama memiliki asuransi:
+                    </span>
+                    <select
+                      name="insuranceDuration"
+                      className={commonClass}
+                      value={form.insuranceDuration}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Pilih lama memiliki asuransi</option>
+                      <option value="< 2 tahun">&lt; 2 tahun</option>
+                      <option value="2-5 tahun">2-5 tahun</option>
+                      <option value="> 6 tahun">&gt; 6 tahun</option>
+                    </select>
+                  </div>
+                )}
+
+                {/* Nama perusahaan asuransi */}
+                <div className="mt-3">
+                  <select
+                    name="insuranceCompany"
+                    className={commonClass}
+                    value={form.insuranceCompany}
+                    onChange={handleChange}
+                  >
+                    <option value="">Pilih Asuransi</option>
+                    <option value="prudential">Prudential</option>
+                    <option value="allianz">Allianz</option>
+                    <option value="generali">Generali</option>
+                    <option value="lainnya">Lainnya</option>
+                  </select>
+                </div>
+              </>
             )}
           </div>
 
-          <div className="">
+          <div>
             <span className="text-xs text-gray-500 font-semibold">
               Tujuan Anda :
             </span>
@@ -200,27 +231,11 @@ Terima kasih.
               value={form.topik}
               onChange={handleChange}
             >
-
               {opsiPertanyaan.map((item, index) => (
                 <option value={item.value} key={index}>
                   {item.label}
                 </option>
               ))}
-
-              {/* <option value="">Pilih Topik Anda</option>
-              <option value="review polis asuransi">
-                Bantu Review Polis Asuransi
-              </option>
-              <option value="berapa harga premi saya">
-                Berapa Harga Premi Saya
-              </option>
-              <option value="berapa harga premi anggota keluarga saya">
-                Berapa Harga Premi Anggota Keluarga Saya
-              </option>
-              <option value="tanya-tanya asuransi">
-                Tanya-tanya seputar asuransi
-              </option>
-              <option value="lainnya">Lainnya</option> */}
             </select>
           </div>
 

@@ -5,41 +5,72 @@ import { motion, AnimatePresence } from "framer-motion";
 const Quick_Survey = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
+  const [surveyData, setSurveyData] = useState({}); // simpan jawaban sementara
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const handleAnswer = (answer) => {
-    const offset = window.innerWidth <= 768 ? 1000 : 1150; // mobile vs desktop
+    const offset = window.innerWidth <= 768 ? 1000 : 1150;
+    let updatedData = { ...surveyData };
+
     switch (step) {
       case 0: // Sudah punya asuransi?
-        answer === "yes" ? setStep(1) : setStep(4);
+        updatedData.hasInsurance = answer === "yes" ? "ya" : "tidak";
+        setSurveyData(updatedData);
+        if (answer === "yes") setStep(1);
+        else setStep(5); // langsung ke bantuan umum
         break;
-      case 1: // Paham dengan yang punya?
-        answer === "yes" ? setStep(2) : setStep(3);
+
+      case 1: // Sudah berapa tahun?
+        updatedData.insuranceDuration = answer;
+        setSurveyData(updatedData);
+        setStep(2); // lanjut ke pertanyaan pemahaman
         break;
-      case 2: // Pilih jenis asuransi
-        navigate("/");
+
+      case 2: // Paham dengan yang punya?
+        updatedData.understandInsurance = answer === "yes";
+        setSurveyData(updatedData);
+        if (answer === "yes") setStep(3);
+        else setStep(4);
+        break;
+
+      case 3: // Pilih jenis asuransi
+        updatedData.insuranceType = answer;
+        updatedData.topik = "review polis asuransi";
+        setSurveyData(updatedData);
+        navigate("/", { state: updatedData });
         setTimeout(() => {
           window.scrollTo({ top: document.body.scrollHeight - offset, behavior: "smooth" });
         }, 2500);
         break;
-      case 3: // Mau dibantu review?
-        answer === "yes" ? setStep(5) : setStep(4);
-        break;
-      case 4: // Bantuan umum
-        navigate("/");
+
+      case 4: // Mau dibantu review?
+        updatedData.topik = answer === "yes" ? "review polis asuransi" : "tanya-tanya asuransi";
+        setSurveyData(updatedData);
+        navigate("/", { state: updatedData });
         setTimeout(() => {
           window.scrollTo({ top: document.body.scrollHeight - offset, behavior: "smooth" });
         }, 2500);
         break;
-      case 5: // Form Konsultasi
-        navigate("/");
+
+      case 5: // Bantuan umum (tidak punya asuransi)
+        updatedData.topik =
+          answer === "buat asuransi"
+            ? "berapa harga premi saya"
+            : answer === "bantuan klaim"
+            ? "bantuan klaim"
+            : answer === "saran / masukan"
+            ? "saran / masukan"
+            : "tanya-tanya asuransi";
+        setSurveyData(updatedData);
+        navigate("/", { state: updatedData });
         setTimeout(() => {
           window.scrollTo({ top: document.body.scrollHeight - offset, behavior: "smooth" });
         }, 2500);
         break;
+
       default:
         break;
     }
@@ -50,18 +81,21 @@ const Quick_Survey = () => {
       case 0:
         return { question: "Apakah Anda sudah memiliki asuransi pribadi?", buttons: ["Yes", "No"] };
       case 1:
-        return { question: "Apakah Kamu mengerti Asuransi yang kamu miliki sekarang ?", buttons: ["Yes", "No"] };
+        return {
+          question: "Sudah berapa tahun Anda memiliki asuransi tersebut?",
+          buttons: ["< 2 tahun", "2-5 tahun", "> 6 tahun"],
+        };
       case 2:
-        return { question: "Pilih jenis asuransi kamu:", buttons: ["Kesehatan", "Jiwa", "UnitLink"] };
+        return { question: "Apakah Kamu mengerti Asuransi yang kamu miliki sekarang?", buttons: ["Yes", "No"] };
       case 3:
-        return { question: "Apakah kamu butuh bantuan untuk review polis?", buttons: ["Yes", "No"] };
+        return { question: "Pilih jenis asuransi kamu:", buttons: ["Kesehatan", "Jiwa", "UnitLink"] };
       case 4:
+        return { question: "Apakah kamu butuh bantuan untuk review polis?", buttons: ["Yes", "No"] };
+      case 5:
         return {
           question: "Pilih bantuan yang Anda butuhkan:",
-          buttons: ["Tanya-tanya terkait asuransi", "Bantuan Klaim", "Buat Asuransi"],
+          buttons: ["Tanya-tanya terkait asuransi", "Bantuan Klaim", "Buat Asuransi", "Saran / Masukan"],
         };
-      case 5:
-        return { question: "Lanjutkan ke Formulir Konsultasi Gratis?", buttons: ["Submit"] };
       default:
         return null;
     }
@@ -69,7 +103,6 @@ const Quick_Survey = () => {
 
   const { question, buttons } = renderQuestion();
 
-  // Motion variants for transitions
   const variants = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
