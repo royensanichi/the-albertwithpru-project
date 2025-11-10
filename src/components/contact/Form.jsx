@@ -53,7 +53,7 @@ Email: ${formData.email}
 No. Telp: ${formData.phone}
 Tgl Lahir: ${formData.dob}
 Domisili: ${formData.city}
-Punya Polis Asuransi: ${formData.hasInsurance === "ya" ? "Ya" : "Tidak"}
+Memiliki Polis Asuransi: ${formData.hasInsurance === "ya" ? "Ya" : "Tidak"}
 ${
   formData.hasInsurance === "ya"
     ? `Durasi: ${formData.insuranceDuration || "-"}\nAsuransi: ${
@@ -190,7 +190,7 @@ Terima kasih.
                 <option value="">Pilih durasi</option>
                 <option value="< 2 tahun">&lt; 2 tahun</option>
                 <option value="2-5 tahun">2-5 tahun</option>
-                <option value="> 6 tahun">&gt; 6 tahun</option>
+                <option value="> 5 tahun">&gt; 5 tahun</option>
               </select>
             </div>
 
@@ -208,6 +208,8 @@ Terima kasih.
                 <option value="prudential">Prudential</option>
                 <option value="allianz">Allianz</option>
                 <option value="generali">Generali</option>
+                <option value="zurich">Zurich</option>
+                <option value="sunlife">Sun Life</option>
                 <option value="lainnya">Lainnya</option>
               </select>
             </div>
@@ -228,7 +230,7 @@ Terima kasih.
             <option value="berapa harga premi saya">Berapa Harga Premi Saya</option>
             <option value="tanya-tanya asuransi">Tanya-tanya Seputar Asuransi</option>
             <option value="bantuan klaim">Bantuan Klaim</option>
-            <option value="saran / masukan">Saran / Masukan</option>
+            <option value="saran/masukan">Saran / Masukan</option>
           </select>
         </div>
 
